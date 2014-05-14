@@ -42,7 +42,7 @@ public class P2PSrvFrame extends javax.swing.JFrame {
 		jButton_refresh = new javax.swing.JButton();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setTitle("P2P Server");
+		setTitle("Newbee P2P chat server");
 		getContentPane().setLayout(null);
 
 		jTextArea_console.setColumns(20);
@@ -74,7 +74,7 @@ public class P2PSrvFrame extends javax.swing.JFrame {
 		jLabel4.setBounds(0, 150, 140, 15);
 
 		jLabel5.setFont(new java.awt.Font("����", 1, 24));
-		jLabel5.setText("P2P Server Test");
+		jLabel5.setText("Newbee P2P chat server");
 		getContentPane().add(jLabel5);
 		jLabel5.setBounds(20, 0, 330, 30);
 
