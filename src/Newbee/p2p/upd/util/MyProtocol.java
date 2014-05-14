@@ -3,7 +3,7 @@
  * 
  * Copyright 2009 xwz, Inc. All rights reserved.
  */
-package xwz.p2p.upd.util;
+package Newbee.p2p.upd.util;
 
 /**
  * ָ��һЩЭ��(��ʵӦ��ʹ��byte��,Ϊ�˼���ʹ��String)

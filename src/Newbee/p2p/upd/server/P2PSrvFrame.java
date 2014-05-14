@@ -1,11 +1,11 @@
-package xwz.p2p.upd.server;
+package Newbee.p2p.upd.server;
 
 import java.net.SocketException;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
 
-import xwz.p2p.upd.util.ConnectionClientInfo;
+import Newbee.p2p.upd.util.ConnectionClientInfo;
 
 public class P2PSrvFrame extends javax.swing.JFrame {
 	private static DefaultListModel dlmClientInfo = new DefaultListModel();

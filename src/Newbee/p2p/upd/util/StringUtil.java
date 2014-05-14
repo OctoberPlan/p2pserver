@@ -1,4 +1,4 @@
-package xwz.p2p.upd.util;
+package Newbee.p2p.upd.util;
 
 import java.util.StringTokenizer;
 

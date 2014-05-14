@@ -1,4 +1,4 @@
-package xwz.p2p.upd.server;
+package Newbee.p2p.upd.server;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

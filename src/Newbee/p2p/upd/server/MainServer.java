@@ -1,4 +1,4 @@
-package xwz.p2p.upd.server;
+package Newbee.p2p.upd.server;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 
-import xwz.p2p.upd.util.ConnectionClientInfo;
-import xwz.p2p.upd.util.MyProtocol;
-import xwz.p2p.upd.util.StringUtil;
+import Newbee.p2p.upd.util.ConnectionClientInfo;
+import Newbee.p2p.upd.util.MyProtocol;
+import Newbee.p2p.upd.util.StringUtil;
 
 public class MainServer {
 	private static List<ConnectionClientInfo> allClients = new ArrayList<ConnectionClientInfo>();
