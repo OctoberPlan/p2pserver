@@ -1,9 +1,3 @@
-/*
- * P2PTestFrame.java
- *
- * Created on __DATE__, __TIME__
- */
-
 package xwz.p2p.upd.server;
 
 import java.net.SocketException;
@@ -13,10 +7,6 @@ import javax.swing.DefaultListModel;
 
 import xwz.p2p.upd.util.ConnectionClientInfo;
 
-/**
- *
- * @author  __USER__
- */
 public class P2PSrvFrame extends javax.swing.JFrame {
 	private static DefaultListModel dlmClientInfo = new DefaultListModel();
 	private static List<ConnectionClientInfo> connClients = null;
@@ -83,7 +73,7 @@ public class P2PSrvFrame extends javax.swing.JFrame {
 		getContentPane().add(jLabel4);
 		jLabel4.setBounds(0, 150, 140, 15);
 
-		jLabel5.setFont(new java.awt.Font("ËÎÌå", 1, 24));
+		jLabel5.setFont(new java.awt.Font("ï¿½ï¿½ï¿½ï¿½", 1, 24));
 		jLabel5.setText("P2P Server Test");
 		getContentPane().add(jLabel5);
 		jLabel5.setBounds(20, 0, 330, 30);
@@ -138,7 +128,7 @@ public class P2PSrvFrame extends javax.swing.JFrame {
 		dlmClientInfo.removeAllElements();
 
 		String consoletxt = jTextArea_console.getText();
-		consoletxt += "·þÎñÆ÷ÒÑÍ£Ö¹\r\n";
+		consoletxt += "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£Ö¹\r\n";
 		jTextArea_console.setText(consoletxt);
 
 		this.jButton_start.setEnabled(true);
@@ -152,13 +142,13 @@ public class P2PSrvFrame extends javax.swing.JFrame {
 			MainServer.startP2PServer(port);
 
 			String consoletxt = jTextArea_console.getText();
-			consoletxt += "·þÎñÆ÷ÒÑÆô¶¯\r\n";
+			consoletxt += "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\r\n";
 			jTextArea_console.setText(consoletxt);
 			this.jButton_start.setEnabled(false);
 
 		} catch (SocketException e) {
 			String consoletxt = jTextArea_console.getText();
-			consoletxt += "Æô¶¯·þÎñÆ÷Ê§°Ü\r\n" + e.getMessage();
+			consoletxt += "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½\r\n" + e.getMessage();
 			jTextArea_console.setText(consoletxt);
 
 		}

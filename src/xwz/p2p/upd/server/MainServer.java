@@ -1,8 +1,3 @@
-/**
- * MainServer.java Nov 23, 2009
- * 
- * Copyright 2009 xwz, Inc. All rights reserved.
- */
 package xwz.p2p.upd.server;
 
 import java.io.IOException;
@@ -18,36 +13,27 @@ import xwz.p2p.upd.util.ConnectionClientInfo;
 import xwz.p2p.upd.util.MyProtocol;
 import xwz.p2p.upd.util.StringUtil;
 
-/**
- * @author xwz
- * @version 1.0, Nov 23, 2009 11:04:50 PM
- */
 public class MainServer {
-	// 所有客户端列表
 	private static List<ConnectionClientInfo> allClients = new ArrayList<ConnectionClientInfo>();
 	private static DatagramSocket ds = null; 
 	private static P2PSrvFrame p2pFrame = new P2PSrvFrame();
 	private static MainServer mainServer = new MainServer();
 	private static Timer submitTimer = new Timer();
 	
-	// 开始P2P交换服务(程序起点)
 	public static void StartP2PServiveChanege() throws IOException {
 		byte[] buf = new byte[1024];
 		DatagramPacket p = new DatagramPacket(buf, 1024);
 
 		ds.receive(p);
 
-		// 取出信息
 		String content = new String(p.getData(), 0, p.getLength());
 		String ip = p.getAddress().getHostAddress();
 		int port = p.getPort();
 
-		// 输出接收到的数据
 		if (!content.startsWith(MyProtocol.HEART)) {
 			System.out.println(ip + ":" + port + " >>>> " + content);
 		}
 
-		// 处理控制部分,委托给其他方法做
 		if (content.startsWith(MyProtocol.LOGIN)) {
 			dealLogin(ds, p, content);
 		} else if (content.startsWith(MyProtocol.HEART)) {
@@ -61,7 +47,6 @@ public class MainServer {
 		}
 	}
 
-	// 处理登陆请求
 	private static void dealLogin(DatagramSocket ds, DatagramPacket p,String content) {
 		ConnectionClientInfo c = new ConnectionClientInfo();
 
@@ -72,7 +57,6 @@ public class MainServer {
 		c.setPort(p.getPort());
 		allClients.add(c);
 
-		// 获取所有客户端,连接成字符串
 		String listStr = MyProtocol.LIST_ONLINE + MyProtocol.SPLITOR + serialList();
 		System.out.println(listStr);
 
@@ -86,12 +70,8 @@ public class MainServer {
 
 		}
 
-		
-			
-
 	}
 
-	// 把列表数据序列化
 	private static String serialList() {
 		String str = "";
 
@@ -107,13 +87,11 @@ public class MainServer {
 		return str;
 	}
 
-	// 处理心跳包
 	private static void dealHeart(DatagramSocket ds, DatagramPacket p,String content) {
 		
 		
 	}
 
-	// 通知打洞
 	private static void notifyPunchHole(DatagramSocket ds, DatagramPacket p,String content) throws IOException {
 		String[] clientInfo = StringUtil.splitString(content,MyProtocol.SPLITOR);
 
@@ -135,7 +113,6 @@ public class MainServer {
 
 	}
 
-	// 通知打洞成功
 	private static void notifyPunchHoleSuccess(DatagramSocket ds,DatagramPacket p, String content) throws IOException {
 
 		String[] clientInfo = StringUtil.splitString(content,MyProtocol.SPLITOR);
@@ -152,15 +129,9 @@ public class MainServer {
 
 	}
 
-	// 处理协议没有定义过的情况
 	private static void dealOther(DatagramSocket ds, DatagramPacket p,String content) {
 	}
 
-	/**
-	 * @param args
-	 * @throws IOException
-	 * @throws IOException
-	 */
 	public static void main(String[] args) throws IOException {
 		if (args.length>0){
 			startP2PServer(Integer.parseInt(args[0]));
@@ -176,10 +147,7 @@ public class MainServer {
 		ds = new DatagramSocket(port);
 		
 		submitTimer.schedule(new P2PServerThread(mainServer), 1000, 1000);
-			
-		
 	}
-	//
 	public static void stopP2PServer(){
 		submitTimer.cancel();
 		if (!(ds==null)) ds.close();
@@ -190,8 +158,6 @@ public class MainServer {
 	public static List<ConnectionClientInfo> getConnectionClientInfo(){
 		return allClients; 
 	}
-	
-	//刷新客户端的连接用户信息
 	public static void refreshConnectionClientInfo(){
 		p2pFrame.getConnectionClientInfo ();
 		

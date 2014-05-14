@@ -6,56 +6,51 @@
 package xwz.p2p.upd.util;
 
 /**
- * Ö¸¶¨Ò»Ğ©Ğ­Òé(ÆäÊµÓ¦¸ÃÊ¹ÓÃbyteµÄ,ÎªÁË¼òµ¥ÏÈÊ¹ÓÃString)
+ * Ö¸ï¿½ï¿½Ò»Ğ©Ğ­ï¿½ï¿½(ï¿½ï¿½ÊµÓ¦ï¿½ï¿½Ê¹ï¿½ï¿½byteï¿½ï¿½,Îªï¿½Ë¼ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½String)
  * 
  * @author xwz
  * @version 1.0, Nov 25, 2009 10:02:53 PM
  */
 public class MyProtocol {
 	/*
-	 * ËµÃ÷: (C)±íÊ¾ÓÉClient·¢ËÍ´ËÃüÁî (S)±íÊ¾ÓÉServer·¢ËÍ´ËÃüÁî <C>±íÊ¾ÊÇClientÖ±½ÓµÄÍ¨ĞÅ 
-	 * ()±íÊ¾C/SÖ®¼äµÄÍ¨ĞÅ
-	 * <>±íÊ¾CÖ®¼äµÄÍ¨ĞÅ []
+	 * Ëµï¿½ï¿½: (C)ï¿½ï¿½Ê¾ï¿½ï¿½Clientï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½ï¿½ (S)ï¿½ï¿½Ê¾ï¿½ï¿½Serverï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½ï¿½ <C>ï¿½ï¿½Ê¾ï¿½ï¿½ClientÖ±ï¿½Óµï¿½Í¨ï¿½ï¿½ 
+	 * ()ï¿½ï¿½Ê¾C/SÖ®ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
+	 * <>ï¿½ï¿½Ê¾CÖ®ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ []
 	 * 
-	 * xxx:±»Á¬½ÓµÄ¶Ë,Íê³É´òÏòyyyµÄ¶´ yyy:Ìá³öP2PÁ¬½ÓµÄ¶Ë
+	 * xxx:ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ¶ï¿½,ï¿½ï¿½É´ï¿½ï¿½ï¿½yyyï¿½Ä¶ï¿½ yyy:ï¿½ï¿½ï¿½P2Pï¿½ï¿½ï¿½ÓµÄ¶ï¿½
 	 */
 
-	// (C) ¿Í»§¶ËµÚÒ»´ÎµÇÂ½Ê±,·¢ËÍ´ËÃüÁî
+	// (C) ï¿½Í»ï¿½ï¿½Ëµï¿½Ò»ï¿½Îµï¿½Â½Ê±,ï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½ï¿½
 	// LOGIN|nickname
 	public static final String LOGIN = "LOGIN";
 
-	// (S) ÔÚÏß¿Í»§¶ËÁĞ±í
+	// (S) ï¿½ï¿½ï¿½ß¿Í»ï¿½ï¿½ï¿½ï¿½Ğ±ï¿½
 	// LIST_ONLINE|ip1,port1,name1|ip2,port2,name2
 	public static final String LIST_ONLINE = "LIST_ONLINE";
 
-	// (C) ĞÄÌø
+	// (C) ï¿½ï¿½ï¿½ï¿½
 	// HEART|nickname
 	public static final String HEART = "HEART";
 
-	// (C) ÎÒÒªÁ¬½Óxxx,Çë¸æËßxxx´òÒ»¸öÏòÎÒµÄ¶´
+	// (C) ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½xxx,ï¿½ï¿½ï¿½ï¿½ï¿½xxxï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÄ¶ï¿½
 	// WANT_TO_CONNECT|ip|port|nickname
 	public static final String WANT_TO_CONNECT = "WANT_TO_CONNECT";
 
-	// (S) Çë´òÒ»¸öÏòyyyµÄ¶´
+	// (S) ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½yyyï¿½Ä¶ï¿½
 	// PUNCH_HOLE_TO|ip|port|nickname
 	public static final String PUNCH_HOLE_TO = "PUNCH_HOLE_TO";
 
-	// (C) Íê³ÉÏòyyyµÄ´ò¶´,ÇëÍ¨Öªyyy
 	// SUCCESS_HOLE_TO|ip|port|nickname
 	public static final String SUCCESS_HOLE_TO = "SUCCESS_HOLE_TO";
 
-	// (S) xxxÍê³ÉÁË¶ÔÄãµÄ´ò¶´,¿ÉÒÔÁ¬½ÓxxxÁË
 	// CAN_P2P_TO|ip|port|nickname
 	public static final String CAN_P2P_TO = "CAN_P2P_TO";
 
-	// <C> µÚÒ»´ÎyyyÁ¬½Óxxx
 	// HELLO_MYP2P_FRIEND|nickname
 	public static final String HELLO_P2P_FRIEND = "HELLO_MYP2P_FRIEND";
 
-	// <C> ¿Í»§¶ËË½ÏÂÀïÍ¨ĞÅ
 	// P2P_MESSAGE|msg's content
 	public static final String P2P_MESSAGE = "P2P_MESSAGE";
 
-	// ·Ö¸ô·û
 	public static final String SPLITOR = "|";
 }
